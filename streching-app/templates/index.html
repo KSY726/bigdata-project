@@ -1,14 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>스트레칭합시다!</title>
+    <meta charset="UTF-8">
+    <title>스트레칭 합시다!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            width: 180px;
+            transition: transform 0.2s ease-in-out;
+            text-decoration: none;
+            color: black;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .sub {
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
 </head>
 <body>
-    <h1>당신의 자세를 선택하세요</h1>
-    <ul>
-        <li><a href="/stretches/lying">누운 자세</a></li>
-        <li><a href="/stretches/sitting">앉은 자세</a></li>
-        <li><a href="/stretches/standing">서 있는 자세</a></li>
-    </ul>
+    <h1>스트레칭 합시다!</h1>
+    <div class="container">
+        <a href="/stretches/lying" class="card">
+            <img src="{{ url_for('static', filename='lying.png') }}" alt="누운 자세">
+            <div class="label">누운 자세</div>
+            <div class="sub">laying</div>
+        </a>
+        <a href="/stretches/sitting" class="card">
+            <img src="{{ url_for('static', filename='sitting.png') }}" alt="앉은 자세">
+            <div class="label">앉은 자세</div>
+            <div class="sub">sitting</div>
+        </a>
+        <a href="/stretches/standing" class="card">
+            <img src="{{ url_for('static', filename='standing.png') }}" alt="서 있는 자세">
+            <div class="label">서 있는 자세</div>
+            <div class="sub">standing</div>
+        </a>
+    </div>
 </body>
 </html>
