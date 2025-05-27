@@ -123,7 +123,13 @@
                 {% elif pose == '서 있는 자세' %}
                     <img src="{{ url_for('static', filename='standing.png') }}" alt="서 있는 자세" class="img-fluid">
                 {% endif %}
-                <p class="h5">{{ pose }}</p>
+                <p class="h5">
+                    {% if pose == '서 있는 자세' %}
+                        서 있는<br>자세
+                    {% else %}
+                        {{ pose }}
+                    {% endif %}
+                </p>
                 <p class="text-muted">
                     {% if pose == '누운 자세' %}lying
                     {% elif pose == '앉은 자세' %}sitting
